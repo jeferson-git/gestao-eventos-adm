@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100">
+  <div>
     <!-- Nav Bar menu -->
     <div class="px-8 max-w-7xl mx-auto">
       <div class="flex justify-between">
@@ -7,7 +7,8 @@
         <div>
           <a href="#" class="flex items-center py-7 text-gray-700">GdE || </a>
         </div>
-        <!-- Primary Nav -->
+
+        <!-- Primary NavBar Icons -->
         <div class="hidden md:flex items-center lg:space-x-10 space-x-0">
           <nav-bar-button :description="descriptionEventos">
             <icon-calendar />
@@ -22,7 +23,8 @@
             <icon-presentation-chart-line />
           </nav-bar-button>
         </div>
-        <!-- Second Nav  -->
+
+        <!-- Second NavBar Icons  -->
         <div class="hidden md:flex py-3 items-center">
           <img
             src=""
@@ -31,14 +33,22 @@
           />
           <NavBarButtonLogout />
         </div>
-        <!--Nav Bar Mobile button menu -->
-        <div class="md:hidden flex items-center" @click="toggleMenu = !toggleMenu">
-          <nav-bar-button :classBaseIcon="iconClass" :classBaseMenu="menuClassMobile">
+
+        <!--NavBar Mobile button menu -->
+        <div
+          class="md:hidden flex items-center"
+          @click="toggleMenu = !toggleMenu"
+        >
+          <nav-bar-button
+            :classBaseIcon="iconClass"
+            :classBaseMenu="menuClassMobile"
+          >
             <icon-menu />
           </nav-bar-button>
         </div>
       </div>
     </div>
+
     <!-- mobile menu  -->
     <div v-if="toggleMenu">
       <nav-bar-link
@@ -92,9 +102,8 @@ export default defineComponent({
     NavBarButtonLogout,
     IconMenu,
   },
-  
-  setup() {
 
+  setup() {
     let toggleMenu = ref(false);
 
     const descriptionEventos = computed(() => {
@@ -121,15 +130,11 @@ export default defineComponent({
         "py-2",
         "px-4",
         "text-sm",
-        "hover:bg-gray-200",
+        "hover:bg-gray-300",
         "cursor-pointer",
       ];
       return base;
     });
-
-    // function toggleMenuButton() {
-    //   toggleMenu = !toggleMenu
-    // }
 
     return {
       descriptionEventos,
