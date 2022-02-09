@@ -32,7 +32,7 @@
           <NavBarButtonLogout />
         </div>
         <!--Nav Bar Mobile button menu -->
-        <div class="md:hidden flex items-center" @click="toggleMenuButton">
+        <div class="md:hidden flex items-center" @click="toggleMenu = !toggleMenu">
           <nav-bar-button :classBaseIcon="iconClass" :classBaseMenu="menuClassMobile">
             <icon-menu />
           </nav-bar-button>
@@ -70,7 +70,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, reactive, ref } from "vue";
+import { computed, defineComponent, ref } from "vue";
 
 import NavBarButton from "./NavBarButton.vue";
 import NavBarLink from "./NavBarLink.vue";
@@ -92,15 +92,10 @@ export default defineComponent({
     NavBarButtonLogout,
     IconMenu,
   },
+  
+  setup() {
 
-  props: {
-    toggleMenu : {
-      type: Boolean,
-      default: false
-    }
-  },
-
-  setup(props) {
+    let toggleMenu = ref(false);
 
     const descriptionEventos = computed(() => {
       return "Eventos";
@@ -132,10 +127,9 @@ export default defineComponent({
       return base;
     });
 
-    function toggleMenuButton() {
-      props.toggleMenu = !props.toggleMenu
-      console.log(props.toggleMenu)
-    }
+    // function toggleMenuButton() {
+    //   toggleMenu = !toggleMenu
+    // }
 
     return {
       descriptionEventos,
@@ -144,7 +138,8 @@ export default defineComponent({
       descriptionEstatísticas,
       iconClass,
       menuClassMobile,
-      toggleMenuButton
+      toggleMenu,
+      // toggleMenuButton
     };
   },
 });
