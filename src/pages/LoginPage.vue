@@ -1,18 +1,18 @@
 <template>
   <div :class="componentClass">
     <div :class="cardClass">
-      <FormLogin />
+      <TheFormLogin />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent } from "vue";
-import FormLogin from "./login-components/FormLogin.vue";
+import TheFormLogin from "../components/login/TheFormLogin.vue";
 
 export default defineComponent({
-  components: { FormLogin },
-  name: "login",
+  components: { TheFormLogin },
+  name: "login-page",
   props: {
     userName: String,
     password: String,
@@ -26,7 +26,8 @@ export default defineComponent({
 
     const cardClass = computed(() => {
       const base = [
-        "w-4/12",
+        "sm:w-4/12",
+        "w-10/12",
         "bg-white",
         "shadow-md",
         "rounded",
