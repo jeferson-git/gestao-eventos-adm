@@ -6,7 +6,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import Login from './pages/Login.vue'
+import Login from './pages/LoginPage.vue'
 
 export default defineComponent({
   components: { Login },

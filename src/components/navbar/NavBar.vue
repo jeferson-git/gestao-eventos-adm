@@ -1,156 +1,151 @@
 <template>
   <div class="bg-gray-100">
+    <!-- Nav Bar menu -->
     <div class="px-8 max-w-7xl mx-auto">
       <div class="flex justify-between">
+        <!-- logo -->
         <div>
           <a href="#" class="flex items-center py-7 text-gray-700">GdE || </a>
         </div>
-        <div class="flex space-x-1">
-          <div class="flex items-center space-x-5">
-            <a
-              href="#"
-              class="
-                flex
-                sm:py-6
-                py-3
-                px-2
-                text-gray-700
-                border-0
-                hover:border-b-blue-900 hover:border-b-2
-              "
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-5 mr-2 text-blue-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                /></svg
-              ><span>Eventos</span></a
-            >
-            <a
-              href="#"
-              class="
-                flex
-                sm:py-6
-                py-3
-                px-2
-                text-gray-700
-                hover:border-b-blue-900 hover:border-b-2
-              "
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-5 mr-2 text-blue-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-                /></svg
-              >Criar Evento</a
-            >
-            <a
-              href="#"
-              class="
-                flex
-                sm:py-6
-                py-3
-                px-2
-                text-gray-700
-                hover:border-b-blue-900 hover:border-b-2
-              "
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-5 mr-2 text-blue-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                /></svg
-              ><span>Editar Evento</span></a
-            >
-            <a
-              href="#"
-              class="
-                flex
-                sm:py-6
-                py-3
-                px-2
-                text-gray-700
-                hover:border-b-blue-900 hover:border-b-2
-              "
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-5 mr-2 text-blue-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
-                />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
-                /></svg
-              >Estatística</a
-            >
-          </div>
-          <div></div>
-          <div></div>
+        <!-- Primary Nav -->
+        <div class="hidden md:flex items-center lg:space-x-10 space-x-0">
+          <nav-bar-button :description="descriptionEventos">
+            <icon-calendar />
+          </nav-bar-button>
+          <nav-bar-button :description="descriptionCriarEvento">
+            <icon-document-add />
+          </nav-bar-button>
+          <nav-bar-button :description="descriptionGerenciarEvento">
+            <icon-pencil-alt />
+          </nav-bar-button>
+          <nav-bar-button :description="descriptionEstatísticas">
+            <icon-presentation-chart-line />
+          </nav-bar-button>
         </div>
-        <div class="py-3 flex items-center">
+        <!-- Second Nav  -->
+        <div class="hidden md:flex py-3 items-center">
           <img
             src=""
             alt=""
             class="w-11 h-11 border rounded-full border-red-700 mr-4"
           />
-          <button
-            type="button"
-            class="
-              border
-              outline-8
-              hover:ring-2 hover:ring-yellow-500
-              bg-yellow-400
-              rounded-md
-              h-8
-              w-24
-            "
-          >
-            Logout
-          </button>
+          <NavBarButtonLogout />
+        </div>
+        <!--Nav Bar Mobile button menu -->
+        <div class="md:hidden flex items-center" @click="toggleMenuButton">
+          <nav-bar-button :classBaseIcon="iconClass" :classBaseMenu="menuClassMobile">
+            <icon-menu />
+          </nav-bar-button>
         </div>
       </div>
+    </div>
+    <!-- mobile menu  -->
+    <div v-if="toggleMenu">
+      <nav-bar-link
+        :description="descriptionEventos"
+        :classBaseMenu="menuClassMobile"
+      >
+        <icon-calendar />
+      </nav-bar-link>
+      <nav-bar-link
+        :description="descriptionCriarEvento"
+        :classBaseMenu="menuClassMobile"
+      >
+        <icon-document-add />
+      </nav-bar-link>
+      <nav-bar-link
+        :description="descriptionGerenciarEvento"
+        :classBaseMenu="menuClassMobile"
+      >
+        <icon-pencil-alt />
+      </nav-bar-link>
+      <nav-bar-link
+        :description="descriptionEstatísticas"
+        :classBaseMenu="menuClassMobile"
+      >
+        <icon-presentation-chart-line />
+      </nav-bar-link>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { computed, defineComponent, reactive, ref } from "vue";
+
+import NavBarButton from "./NavBarButton.vue";
+import NavBarLink from "./NavBarLink.vue";
+import IconCalendar from "../icons/IconCalendar.vue";
+import IconPencilAlt from "../icons/IconPencilAlt.vue";
+import IconDocumentAdd from "../icons/IconDocumentAdd.vue";
+import IconMenu from "../icons/IconMenu.vue";
+import IconPresentationChartLine from "../icons/IconPresentationChartLine.vue";
+import NavBarButtonLogout from "./NavBarButtonLogout.vue";
 
 export default defineComponent({
-  setup() {},
+  components: {
+    NavBarButton,
+    NavBarLink,
+    IconCalendar,
+    IconPencilAlt,
+    IconDocumentAdd,
+    IconPresentationChartLine,
+    NavBarButtonLogout,
+    IconMenu,
+  },
+
+  props: {
+    toggleMenu : {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  setup(props) {
+
+    const descriptionEventos = computed(() => {
+      return "Eventos";
+    });
+    const descriptionCriarEvento = computed(() => {
+      return "Criar Evento";
+    });
+    const descriptionGerenciarEvento = computed(() => {
+      return "Gerenciar Evento";
+    });
+    const descriptionEstatísticas = computed(() => {
+      return "Estatísticas";
+    });
+
+    const iconClass = computed(() => {
+      const base = ["h-6", "w-6", "text-blue-600"];
+      return base;
+    });
+
+    const menuClassMobile = computed(() => {
+      const base = [
+        "block",
+        "py-2",
+        "px-4",
+        "text-sm",
+        "hover:bg-gray-200",
+        "cursor-pointer",
+      ];
+      return base;
+    });
+
+    function toggleMenuButton() {
+      props.toggleMenu = !props.toggleMenu
+      console.log(props.toggleMenu)
+    }
+
+    return {
+      descriptionEventos,
+      descriptionCriarEvento,
+      descriptionGerenciarEvento,
+      descriptionEstatísticas,
+      iconClass,
+      menuClassMobile,
+      toggleMenuButton
+    };
+  },
 });
 </script>

@@ -1,18 +1,18 @@
 <template>
   <div :class="componentClass">
     <div :class="cardClass">
-      <FormLogin />
+      <TheFormLogin />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent } from "vue";
-import FormLogin from "../components/login/FormLogin.vue";
+import TheFormLogin from "../components/login/TheFormLogin.vue";
 
 export default defineComponent({
-  components: { FormLogin },
-  name: "login",
+  components: { TheFormLogin },
+  name: "login-page",
   props: {
     userName: String,
     password: String,

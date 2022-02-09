@@ -6,11 +6,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+
 import NavBar from '../components/navbar/NavBar.vue'
 
-import NavBarVue from '../components/navbar/NavBar.vue'
-
 export default defineComponent({
+    name: 'dashboard-page',
   components: { NavBar },
     setup() {
         
