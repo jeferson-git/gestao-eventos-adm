@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { computed, defineComponent } from "vue";
-import FormLogin from "./login-components/FormLogin.vue";
+import FormLogin from "../components/login/FormLogin.vue";
 
 export default defineComponent({
   components: { FormLogin },
@@ -26,7 +26,8 @@ export default defineComponent({
 
     const cardClass = computed(() => {
       const base = [
-        "w-4/12",
+        "sm:w-4/12",
+        "w-10/12",
         "bg-white",
         "shadow-md",
         "rounded",
