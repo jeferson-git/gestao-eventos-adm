@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="mt-4 grid grid-cols-1 gap-4 md:hidden"
-    v-for="evento in eventos"
-    :key="evento.id"
-  >
+  <div v-for="evento in eventos" :key="evento.id">
     <div class="bg-white p-4 rounded-lg shadow-lg">
       <div class="flex items-center space-x-2 text-sm">
         <div class="font-bold text-blue-700">{{ evento.name }}</div>

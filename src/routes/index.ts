@@ -2,7 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import LoginPage from '../pages/LoginPage.vue';
 import DashboardPage from '../pages/DashboardPage.vue';
+
 import EventList from '../components/eventos/EventList.vue'
+import EventCreate from '../components/eventos/EventCreate.vue'
 
 const routes = [
   {
@@ -14,10 +16,16 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: DashboardPage,
-    children: [{
-      path: 'eventos',
-      component: EventList
-    }]
+    children: [
+      {
+        path: 'eventos',
+        component: EventList
+      },
+      {
+        path: 'adicionar-evento',
+        component: EventCreate
+      }
+    ]
   }
 ]
 const router = createRouter({
