@@ -14,19 +14,20 @@
 </template>
 
 <script lang="ts">
+import { Console } from "console";
 import { computed, defineComponent } from "vue";
 
 export default defineComponent({
   props: {
     configButton: {
       type: Object,
-      default: {
-        labelInput: "Selecione",
+      default: [{
+        labelInput: "Selecione :",
         placeholderButton: "Preencha este campo...",
         typeButton: "text",
         idButton: "",
         nameButton: "",
-      },
+      }],
     },
     classButton: {
       type: String,
@@ -35,6 +36,7 @@ export default defineComponent({
     },
   },
   setup(props) {
+    console.log(props.configButton)
     const labelComponent = computed(() => {
       return props.configButton[0].labelInput;
     });

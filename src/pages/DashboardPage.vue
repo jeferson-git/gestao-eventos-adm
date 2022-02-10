@@ -1,9 +1,9 @@
 <template>
   <div class="w-full static md:fixed bg-gray-200">
     <nav-bar></nav-bar>
-  </div>
-  <div class="w-full h-screen items-center p-4 bg-gray-100">
-    <router-view></router-view>
+    <div class="w-full h-screen items-center p-4 bg-gray-100">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 

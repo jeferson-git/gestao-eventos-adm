@@ -5,6 +5,7 @@ import DashboardPage from '../pages/DashboardPage.vue';
 
 import EventList from '../components/eventos/EventList.vue'
 import EventCreate from '../components/eventos/EventCreate.vue'
+import EventManage from '../components/eventos/EventManage.vue'
 
 const routes = [
   {
@@ -24,6 +25,10 @@ const routes = [
       {
         path: 'adicionar-evento',
         component: EventCreate
+      },
+      {
+        path: 'gerenciar-evento',
+        component: EventManage
       }
     ]
   }
