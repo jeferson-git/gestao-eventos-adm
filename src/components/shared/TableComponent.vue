@@ -4,7 +4,7 @@
       <thead class="bg-gray-50 border-b-2 border-gray-200">
         <tr class="text-center">
           <th class="p-3 text-sm font-semibold tracking-wide">Responsável</th>
-          <th class="p-3 text-sm font-semibold tracking-wide">Esporte</th>
+          <th class="p-3 text-sm font-semibold tracking-wide">Modalidade</th>
           <th class="p-3 text-sm font-semibold tracking-wide">Data</th>
           <th class="p-3 text-sm font-semibold tracking-wide">Hora Inicio</th>
           <th class="p-3 text-sm font-semibold tracking-wide">Hora Final</th>
@@ -55,7 +55,6 @@
 
 <script lang="ts">
 import { computed, defineComponent } from "vue";
-import EventListVue from "../eventos/EventList.vue";
 
 export default defineComponent({
   props: {
@@ -72,6 +71,26 @@ export default defineComponent({
           award: "Paga a Quadra",
           open: "Não",
         },
+        {
+          name: "Jeferson Pereira",
+          modality: "Futsal",
+          date: "21/12/2022",
+          initHour: "14:30",
+          endHour: "15:30",
+          participants: 14,
+          award: "Paga a Quadra",
+          open: "Não",
+        },
+        {
+          name: "Jeferson Pereira",
+          modality: "Futsal",
+          date: "21/12/2022",
+          initHour: "14:30",
+          endHour: "15:30",
+          participants: 14,
+          award: "Paga a Quadra",
+          open: "Não",
+        }
       ],
     },
   },
