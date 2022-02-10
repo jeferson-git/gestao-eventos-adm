@@ -17,16 +17,15 @@
           <input-form :configButton="configButtonOpen"></input-form>
           <input-form :configButton="configButtonResponsible"></input-form>
         </div>
-        <div class="p-4 float-right">
-          <button
-            type="button"
-            class="m-3 p-2 w-40 bg-green-500 rounded-lg text-white"
-          >
-            Criar Evento
-          </button>
-          <button class="m-3 p-2 w-40 bg-gray-300 rounded-lg text-black">
-            Cancelar
-          </button>
+        <div class="p-4 float-right flex">
+          <button-form
+            :messageButton="messageButtonCreate"
+            :colorButton="colorButtonCreate"
+          />
+          <button-form
+            :messageButton="messageButtonCancel"
+            :colorButton="colorButtonCancel"
+          />
         </div>
       </div>
     </div>
@@ -57,6 +56,19 @@
           :configButton="configButtonResponsible"
         ></input-form-mobile>
       </div>
+      <hr>
+      <div class="mr-6 p-2">
+        <button-form
+          :messageButton="messageButtonCreate"
+          :colorButton="colorButtonCreate"
+          :mobileButton="true"
+        />
+        <button-form
+          :messageButton="messageButtonCancel"
+          :colorButton="colorButtonCancel"
+          :mobileButton="true"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -66,10 +78,11 @@ import { computed, defineComponent } from "vue";
 
 import HeaderMessage from "../shared/HeaderMessage.vue";
 import InputForm from "../shared/InputForm.vue";
+import ButtonForm from "../shared/ButtonForm.vue";
 import InputFormMobile from "../shared/InputFormMobile.vue";
 
 export default defineComponent({
-  components: { HeaderMessage, InputForm, InputFormMobile },
+  components: { HeaderMessage, InputForm, InputFormMobile, ButtonForm },
   setup() {
     const message = computed(() => {
       return "Por favor, preencha o formulário para criar seu novo evento...";
@@ -180,6 +193,22 @@ export default defineComponent({
       return base;
     });
 
+    const messageButtonCreate = computed(() => {
+      return "Criar Evento";
+    });
+
+    const messageButtonCancel = computed(() => {
+      return "Cancelar";
+    });
+
+    const colorButtonCreate = computed(() => {
+      return "";
+    });
+
+    const colorButtonCancel = computed(() => {
+      return "bg-gray-500";
+    });
+
     const formClass = computed(() => {
       const base = [
         "w-full",
@@ -205,6 +234,10 @@ export default defineComponent({
       configButtonAward,
       configButtonOpen,
       configButtonResponsible,
+      messageButtonCreate,
+      messageButtonCancel,
+      colorButtonCreate,
+      colorButtonCancel,
     };
   },
 });

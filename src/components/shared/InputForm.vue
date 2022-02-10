@@ -58,7 +58,7 @@ export default defineComponent({
     const classButtonComponent = computed(() => {
       return props.classButton;
     });
-    console.log(props.configButton);
+    
     return {
       labelComponent,
       placeholderComponent,
