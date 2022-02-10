@@ -57,11 +57,14 @@
     </div>
 
     
-    <div class="p-4 space-x-2 flex">
-        <input-form :configButton="configButtonPlayer"></input-form>
-        <input-form :configButton="configButtonPosition"></input-form>
-        <input-form :configButton="configButtonNumber"></input-form>
-    </div>
+      <div class="teste w-full text-center">
+        Caso voçê queira adicionar os jogadores, preencha os campos, ou o sistema pode fazer isso por voçê...
+        <div class="p-4 space-x-2 flex">
+            <input-form :configButton="configButtonPlayer"></input-form>
+            <input-form :configButton="configButtonPosition"></input-form>
+            <input-form :configButton="configButtonNumber"></input-form>
+        </div>
+      </div>
     
   </div>
 
