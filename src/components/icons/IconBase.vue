@@ -15,7 +15,7 @@ export default {
   props: {
    iconClass: {
      type: String,
-     default: 'h-6 w-5 mr-2 text-blue-600'
+     default: 'h-6 w-5 mr-2 mt-1 text-blue-600'
    }
   },
 };
