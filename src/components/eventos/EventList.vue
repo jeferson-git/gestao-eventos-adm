@@ -10,8 +10,9 @@
     </div>
 
     <!-- tabela de eventos para mobile -->
-    <table-mobile-component></table-mobile-component>
-    
+    <div class="mt-4 grid grid-cols-1 gap-4 md:hidden">
+      <table-mobile-component></table-mobile-component>
+    </div>
   </div>
 </template>
 

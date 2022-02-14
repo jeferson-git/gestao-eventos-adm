@@ -9,7 +9,7 @@
         </div>
 
         <!-- Primary NavBar Icons -->
-        <div class="hidden md:flex items-center lg:space-x-10 space-x-0">
+        <div class="hidden md:flex items-center lg:space-x-10">
           <nav-bar-button :description="descriptionEventos">
             <icon-calendar />
           </nav-bar-button>
@@ -20,6 +20,9 @@
             <icon-pencil-alt />
           </nav-bar-button>
           <nav-bar-button :description="descriptionEstatísticas">
+            <icon-presentation-chart-line />
+          </nav-bar-button>
+           <nav-bar-button :description="descriptionEstatísticas">
             <icon-presentation-chart-line />
           </nav-bar-button>
         </div>
@@ -68,6 +71,12 @@
         :classBaseMenu="menuClassMobile"
       >
         <icon-pencil-alt />
+      </nav-bar-link>
+      <nav-bar-link
+        :description="descriptionEstatísticas"
+        :classBaseMenu="menuClassMobile"
+      >
+        <icon-presentation-chart-line />
       </nav-bar-link>
       <nav-bar-link
         :description="descriptionEstatísticas"
