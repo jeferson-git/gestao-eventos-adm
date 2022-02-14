@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full md:flex">
+  <div class="container mx-auto md:flex">
     <div class="xl:flex m-auto">
       <!-- Visao do campo -->
       <div class="sm:flex">

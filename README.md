@@ -20,6 +20,7 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 - Lógica para montar o time randômico
 - Tabela para mobile 
 - Opção para genciamento ser um Button na Table e não na NavBar
+- CSS dos jogadores, fazer de forma dinâmina.
 
 ---------- Tela Login ---------------
 

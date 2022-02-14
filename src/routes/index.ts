@@ -7,6 +7,8 @@ import EventList from '../components/eventos/EventList.vue'
 import EventCreate from '../components/eventos/EventCreate.vue'
 import EventManage from '../components/eventos/EventManage.vue'
 
+import SummaryComponent from "../components/summary/views/SummaryComponent.vue"
+
 const routes = [
   {
     path: '/',
@@ -29,6 +31,10 @@ const routes = [
       {
         path: 'gerenciar-evento',
         component: EventManage
+      },
+      {
+        path: 'gerenciar-sumula',
+        component: SummaryComponent
       }
     ]
   }

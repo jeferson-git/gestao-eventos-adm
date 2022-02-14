@@ -33,7 +33,6 @@ export default defineComponent({
       type: String,
       default: ''
     }
-
   },
 
   setup(props) {

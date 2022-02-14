@@ -14,7 +14,6 @@
 </template>
 
 <script lang="ts">
-import { Console } from "console";
 import { computed, defineComponent } from "vue";
 
 export default defineComponent({
@@ -36,7 +35,6 @@ export default defineComponent({
     },
   },
   setup(props) {
-    console.log(props.configButton)
     const labelComponent = computed(() => {
       return props.configButton[0].labelInput;
     });
@@ -60,7 +58,7 @@ export default defineComponent({
     const classButtonComponent = computed(() => {
       return props.classButton;
     });
-    console.log(props.configButton);
+    
     return {
       labelComponent,
       placeholderComponent,
