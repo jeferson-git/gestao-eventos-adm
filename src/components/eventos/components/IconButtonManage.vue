@@ -4,31 +4,35 @@
     :class="classBaseMenu"
   >
     <icon-base :class="iconClass"> <slot /> </icon-base
-    ><span>{{ description }}</span></button
+    ><span> {{ message }}</span></button
   >
 </template>
 
 <script lang="ts">
 import { computed, defineComponent } from "vue";
 
-import IconBase from "../icons/IconBase.vue";
-
+import IconBase from "../../icons/IconBase.vue";
+import IconCalendar from "../../icons/IconCalendar.vue";
 
 export default defineComponent({
-  components: { IconBase },
+  components: { IconBase, IconCalendar },
   props: {
     description: String,
 
     classBaseIcon: {
       type: Array,
-      default: ["h-6", "w-5", "mr-2", "text-blue-600"],
+      default: ["h-6", "w-5", "mr-2", "text-white"],
     },
 
     classBaseMenu: {
       type: Array,
-      default: ["flex", "py-3", "px-2","text-gray-700", "border-0","hover:border-b-blue-900", "hover:border-b-2"]
-    }
+      default: ["w-10", "m-auto", "bg-gray-300", "text-white", "rounded", "rounded-lg", "hover:ring-2", "hover:ring-blue-200"]
+    },
 
+    message: {
+      type: String,
+      default: ''
+    }
   },
 
   setup(props) {

@@ -20,13 +20,13 @@ export default defineComponent({
   props: {
     configButton: {
       type: Object,
-      default: {
-        labelInput: "Selecione",
+      default: [{
+        labelInput: "Selecione :",
         placeholderButton: "Preencha este campo...",
         typeButton: "text",
         idButton: "",
         nameButton: "",
-      },
+      }],
     },
     classButton: {
       type: String,

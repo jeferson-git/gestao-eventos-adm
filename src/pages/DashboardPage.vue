@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full static md:fixed bg-gray-200">
+  <div class="w-full bg-gray-200">
     <nav-bar></nav-bar>
-    <div class="w-full h-screen items-center p-4 bg-gray-100">
+    <div class="w-full items-center p-4 bg-gray-100">
       <router-view></router-view>
     </div>
   </div>
